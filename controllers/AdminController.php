@@ -12,24 +12,12 @@
  * @license    http://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
-use CoreShop\Controller\Action\Payment;
 use CoreShop\Model;
 
 use Pimcore\Model\Object\CoreShopPayment;
 
-class CoreShopBankwire_AdminController extends Payment
+class CoreShopBankwire_AdminController extends \CoreShop\Plugin\Controller\Admin
 {
-    public function init() {
-
-        parent::init();
-
-        // check permissions
-        $notRestrictedActions = array();
-        if (!in_array($this->getParam("action"), $notRestrictedActions)) {
-            //$this->checkPermission("coreshop_permission_carriers");
-        }
-    }
-
     public function getAction() {
         $config = new Model\Configuration\Listing();
         $config->setFilter(function($entry) {
