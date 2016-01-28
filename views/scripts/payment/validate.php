@@ -9,7 +9,7 @@
             </div>
             <div class="panel-body delivery-options">
                 <p><?=sprintf($this->translate("Do you want to pay the amount of %s with Bankwire?", \CoreShop\Tool::formatPrice($this->cart->getTotal())))?></p>
-                <p><?php echo \CoreShop\Model\Configuration::get("BANKWIRE.TEXT." . strtoupper($this->language))?></p>
+                <p><?php echo html_entity_decode(\CoreShop\Model\Configuration::get("BANKWIRE.TEXT." . strtoupper($this->language)))?></p>
                 <div class="row">
                     <div class="col-xs-12">
                         <a href="<?=$this->url(array("lang" => $this->language, "action" => "payment"), "coreshop_checkout")?>" class="btn btn-default pull-left">
