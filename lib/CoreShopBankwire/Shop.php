@@ -28,7 +28,7 @@ class Shop extends CorePayment
      */
     public function attachEvents()
     {
-        CorePlugin::getEventManager()->attach("payment.getProvider", function($e) {
+        CorePlugin::getEventManager()->attach("payment.getProvider", function ($e) {
             return $this;
         });
     }
@@ -89,12 +89,13 @@ class Shop extends CorePayment
      * @param Cart $cart
      * @return mixed
      */
-    public function process(Cart $cart) {
+    public function process(Cart $cart)
+    {
         return $this->getProcessValidationUrl();
     }
 
-    public function processPaymentReturn() {
-
+    public function processPaymentReturn()
+    {
     }
 
     /**
@@ -102,7 +103,8 @@ class Shop extends CorePayment
      *
      * @return string
      */
-    public function getConfirmationUrl() {
+    public function getConfirmationUrl()
+    {
         return $this->url($this->getIdentifier(), 'confirmation');
     }
 
@@ -111,7 +113,8 @@ class Shop extends CorePayment
      *
      * @return string
      */
-    public function getProcessValidationUrl() {
+    public function getProcessValidationUrl()
+    {
         return $this->url($this->getIdentifier(), 'validate');
     }
 
@@ -120,7 +123,8 @@ class Shop extends CorePayment
      *
      * @return string
      */
-    public function getPaymentUrl() {
+    public function getPaymentUrl()
+    {
         return $this->url($this->getIdentifier(), 'payment');
     }
 }
