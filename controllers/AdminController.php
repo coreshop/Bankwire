@@ -1,6 +1,6 @@
 <?php
 /**
- * CoreShopBankwire
+ * Bankwire
  *
  * LICENSE
  *
@@ -15,7 +15,7 @@
 use CoreShop\Model;
 use Pimcore\Model\Object\CoreShopPayment;
 
-class CoreShopBankwire_AdminController extends \CoreShop\Plugin\Controller\Admin
+class Bankwire_AdminController extends \CoreShop\Plugin\Controller\Admin
 {
     public function getAction()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * CoreShopBankwire
+ * Bankwire
  *
  * LICENSE
  *
@@ -12,7 +12,7 @@
  * @license    http://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
-namespace CoreShopBankwire;
+namespace Bankwire;
 
 use Pimcore\API\Plugin\AbstractPlugin;
 use Pimcore\API\Plugin\PluginInterface;
@@ -76,7 +76,7 @@ class Plugin extends AbstractPlugin implements PluginInterface
      */
     public static function getTranslationFileDirectory()
     {
-        return PIMCORE_PLUGINS_PATH . '/CoreShopBankwire/static/texts';
+        return PIMCORE_PLUGINS_PATH . '/Bankwire/static/texts';
     }
 
     /**
@@ -86,9 +86,9 @@ class Plugin extends AbstractPlugin implements PluginInterface
     public static function getTranslationFile($language)
     {
         if (is_file(self::getTranslationFileDirectory() . "/$language.csv")) {
-            return "/CoreShopBankwire/static/texts/$language.csv";
+            return "/Bankwire/static/texts/$language.csv";
         } else {
-            return '/CoreShopBankwire/static/texts/en.csv';
+            return '/Bankwire/static/texts/en.csv';
         }
     }
 }

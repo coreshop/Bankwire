@@ -1,6 +1,6 @@
 <?php
 /**
- * CoreShopBankwire
+ * Bankwire
  *
  * LICENSE
  *
@@ -16,7 +16,7 @@ use CoreShop\Controller\Action\Payment;
 use Pimcore\Model\Object\CoreShopPayment;
 use CoreShop\Tool;
 
-class CoreShopBankwire_PaymentController extends Payment
+class Bankwire_PaymentController extends Payment
 {
     /**
      * User accepted Bankwire Payment -> createOrder
@@ -30,7 +30,7 @@ class CoreShopBankwire_PaymentController extends Payment
     }
 
     /**
-     * @return CoreShopBankwire\Shop
+     * @return Bankwire\Shop
      */
     public function getModule()
     {

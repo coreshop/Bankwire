@@ -1,5 +1,5 @@
 /**
- * CoreShopBankwire
+ * Bankwire
  *
  * LICENSE
  *

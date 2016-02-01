@@ -1,5 +1,5 @@
 /**
- * CoreShopBankwire
+ * Bankwire
  *
  * LICENSE
  *
@@ -20,7 +20,7 @@ pimcore.plugin.coreshop.bankwire.settings = Class.create({
 
     getData: function () {
         Ext.Ajax.request({
-            url: "/plugin/CoreShopBankwire/admin/get",
+            url: "/plugin/Bankwire/admin/get",
             success: function (response)
             {
                 this.data = Ext.decode(response.responseText);
@@ -132,7 +132,7 @@ pimcore.plugin.coreshop.bankwire.settings = Class.create({
         var values = this.layout.getForm().getFieldValues();
 
         Ext.Ajax.request({
-            url: "/plugin/CoreShopBankwire/admin/set",
+            url: "/plugin/Bankwire/admin/set",
             method: "post",
             params: {
                 data: Ext.encode(values)

@@ -1,6 +1,6 @@
 <?php
 /**
- * CoreShopBankwire
+ * Bankwire
  *
  * LICENSE
  *
@@ -12,7 +12,7 @@
  * @license    http://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
-namespace CoreShopBankwire;
+namespace Bankwire;
 
 use CoreShop\Model\Cart;
 use CoreShop\Model\Plugin\Payment as CorePayment;
@@ -60,7 +60,7 @@ class Shop extends CorePayment
      */
     public function getImage()
     {
-        return "/plugins/CoreShopBankwire/static/img/bankwire.gif";
+        return "/plugins/Bankwire/static/img/bankwire.gif";
     }
 
     /**
@@ -70,7 +70,7 @@ class Shop extends CorePayment
      */
     public function getIdentifier()
     {
-        return "CoreShopBankwire";
+        return "Bankwire";
     }
 
     /**
