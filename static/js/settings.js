@@ -11,8 +11,8 @@
  * @license    http://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
-pimcore.registerNS("pimcore.plugin.coreshop.bankwire.settings");
-pimcore.plugin.coreshop.bankwire.settings = Class.create({
+pimcore.registerNS("pimcore.plugin.bankwire.settings");
+pimcore.plugin.bankwire.settings = Class.create({
 
     initialize: function () {
         this.getData();

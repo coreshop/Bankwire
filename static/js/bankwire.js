@@ -11,40 +11,43 @@
  * @license    http://www.coreshop.org/license     GNU General Public License version 3 (GPLv3)
  */
 
-pimcore.registerNS("pimcore.plugin.coreshop.bankwire");
 
-pimcore.plugin.coreshop.bankwire = Class.create(coreshop.plugin.admin, {
+$(document).on("coreShopReady", function() {
+    pimcore.registerNS("pimcore.plugin.bankwire.plugin");
 
-    getClassName: function() {
-        return "pimcore.plugin.coreshop.bankwire";
-    },
+    pimcore.plugin.bankwire.plugin = Class.create(coreshop.plugin.admin, {
 
-    initialize: function() {
-        coreshop.plugin.broker.registerPlugin(this);
-    },
+        getClassName: function() {
+            return "pimcore.plugin.bankwire";
+        },
 
-    uninstall: function() {
-        //TODO remove from menu
-    },
+        initialize: function() {
+            coreshop.plugin.broker.registerPlugin(this);
+        },
 
-    coreshopReady: function (coreshop, broker) {
-        coreshop.addPluginMenu({
-            text: t("coreshop_bankwire"),
-            iconCls: "coreshop_icon_bankwire",
-            handler: this.openBankwire
-        });
-    },
+        uninstall: function() {
+            //TODO remove from menu
+        },
 
-    openBankwire : function()
-    {
-        try {
-            pimcore.globalmanager.get("coreshop_bankwire").activate();
-        }
-        catch (e) {
-            //console.log(e);
-            pimcore.globalmanager.add("coreshop_bankwire", new pimcore.plugin.coreshop.bankwire.settings());
-        }
-    },
+        coreshopReady: function (coreshop, broker) {
+            coreshop.addPluginMenu({
+                text: t("coreshop_bankwire"),
+                iconCls: "coreshop_icon_bankwire",
+                handler: this.openBankwire
+            });
+        },
+
+        openBankwire : function()
+        {
+            try {
+                pimcore.globalmanager.get("coreshop_bankwire").activate();
+            }
+            catch (e) {
+                //console.log(e);
+                pimcore.globalmanager.add("coreshop_bankwire", new pimcore.plugin.bankwire.settings());
+            }
+        },
+    });
+
+    new pimcore.plugin.bankwire.plugin();
 });
-
-new pimcore.plugin.coreshop.bankwire();
