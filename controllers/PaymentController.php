@@ -24,7 +24,7 @@ class Bankwire_PaymentController extends Payment
     public function paymentAction()
     {
         //DoPayment
-        $this->session->order = $this->getModule()->createOrder($this->cart, \CoreShop\Model\OrderState::getById(\CoreShop\Model\Configuration::get("SYSTEM.ORDERSTATE.BANKWIRE")), $this->cart->getTotal(), $this->view->language);
+        $this->session->order = $this->getModule()->createOrder($this->cart, \CoreShop\Model\OrderState::getById(\CoreShop\Model\Configuration::get("SYSTEM.ORDERSTATE.BANKWIRE")), 0, $this->view->language);
 
         $this->redirect($this->getModule()->getConfirmationUrl());
     }
