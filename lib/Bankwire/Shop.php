@@ -60,7 +60,7 @@ class Shop extends CorePayment
      */
     public function getImage()
     {
-        return "/plugins/Bankwire/static/img/bankwire.gif";
+        return "/plugins/Bankwire/static/img/bankwire.jpg";
     }
 
     /**
