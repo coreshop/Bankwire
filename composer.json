@@ -3,7 +3,7 @@
   "type": "pimcore-plugin",
   "license": "GPLv3",
   "description": "Bankwire Payment for CoreShop",
-  "keywords": ["pimcore", "coreshop", "bankwire"],
+  "keywords": ["pimcore", "coreshop", "bankwire", "coreshop-payment"],
   "homepage": "http://www.coreshop.org",
   "authors": [{
     "name": "Dominik Pfaffenbauer",
