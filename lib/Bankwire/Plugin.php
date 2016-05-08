@@ -37,7 +37,7 @@ class Plugin extends AbstractPlugin implements PluginInterface
     }
 
     /**
-     * @return \CoreShopCod\Shop
+     * @return \Bankwire\Shop
      */
     public static function getShop()
     {
