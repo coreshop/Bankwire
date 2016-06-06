@@ -12,5 +12,5 @@ Bankwire Payment Plugin for Pimcore
 Install with composer
 
 ```
-composer require coreshop/bankwire dev-master
+composer require coreshop/bankwire 1.0
 ```
