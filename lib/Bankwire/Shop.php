@@ -74,16 +74,6 @@ class Shop extends CorePayment
     }
 
     /**
-     * Get Payment Fee
-     *
-     * @param Cart $cart
-     * @return int
-     */
-    public function getPaymentFee(Cart $cart)
-    {
-        return 0;
-    }
-    /**
      * Process Validation for Payment
      *
      * @param Cart $cart
@@ -92,10 +82,6 @@ class Shop extends CorePayment
     public function process(Cart $cart)
     {
         return $this->getProcessValidationUrl();
-    }
-
-    public function processPaymentReturn()
-    {
     }
 
     /**
