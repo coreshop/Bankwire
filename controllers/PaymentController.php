@@ -13,7 +13,6 @@
  */
 
 use CoreShop\Controller\Action\Payment;
-use CoreShop\Tool;
 
 /**
  * Class Bankwire_PaymentController

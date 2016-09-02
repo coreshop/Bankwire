@@ -17,7 +17,6 @@ namespace Bankwire;
 use CoreShop\Model\Cart;
 use CoreShop\Model\Plugin\Payment as CorePayment;
 use CoreShop\Plugin as CorePlugin;
-use CoreShop\Tool;
 
 /**
  * Class Shop
