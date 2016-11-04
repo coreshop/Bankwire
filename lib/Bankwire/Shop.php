@@ -88,11 +88,30 @@ class Shop extends CorePayment
     }
 
     /**
+     * Processes the Payment async, this method returns the process module, controller, action
+     *
+     * @param Cart $cart
+     *
+     * @return array('module', 'controller', 'action')
+     */
+    public function processAsync(Cart $cart)
+    {
+        return [
+            'module' => $this->getIdentifier(),
+            'controller' => 'payment',
+            'action' => 'validate'
+        ];
+    }
+
+
+    /**
      * Get url for confirmation link
+     *
+     * @param boolean $isOpc
      *
      * @return string
      */
-    public function getConfirmationUrl()
+    public function getConfirmationUrl($isOpc = false)
     {
         return $this->url($this->getIdentifier(), 'confirmation');
     }
@@ -100,9 +119,11 @@ class Shop extends CorePayment
     /**
      * get url for validation link
      *
+     * @param boolean $isOpc
+     *
      * @return string
      */
-    public function getProcessValidationUrl()
+    public function getProcessValidationUrl($isOpc = false)
     {
         return $this->url($this->getIdentifier(), 'validate');
     }
@@ -110,9 +131,11 @@ class Shop extends CorePayment
     /**
      * get url payment link
      *
+     * @param boolean $isOpc
+     *
      * @return string
      */
-    public function getPaymentUrl()
+    public function getPaymentUrl($isOpc = false)
     {
         return $this->url($this->getIdentifier(), 'payment');
     }
