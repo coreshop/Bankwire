@@ -24,14 +24,29 @@ class Bankwire_PaymentController extends Payment
      */
     public function paymentAction()
     {
-        //DoPayment
-        $this->session->order = $this->cart->createOrder(
-            \CoreShop\Model\Order\State::getByIdentifier('BANKWIRE'),
-            $this->getModule(),
-            0,
-            $this->view->language);
-        
-        $this->redirect($this->getModule()->getConfirmationUrl());
+        try {
+            $this->session->order = $this->createOrder($this->view->language, 0);
+
+            $params = [
+
+                'newState'      => \CoreShop\Model\Order\State::STATE_NEW,
+                'newStatus'     => \CoreShop\Model\Order\State::STATUS_PENDING,
+                'additional'    => [
+                    'sendOrderConfirmationMail' => 'yes',
+                ]
+
+            ];
+
+            try {
+                \CoreShop\Model\Order\State::changeOrderState($this->session->order, $params);
+                $this->redirect($this->getModule()->getConfirmationUrl());
+            } catch(\Exception $e) {
+                $this->redirect($this->getModule()->getErrorUrl($e->getMessage()));
+            }
+
+        } catch(\Exception $e ) {
+            $this->redirect($this->getModule()->getErrorUrl($e->getMessage()));
+        }
     }
 
     /**

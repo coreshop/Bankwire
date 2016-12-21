@@ -103,6 +103,16 @@ class Shop extends CorePayment
         ];
     }
 
+    /**
+     * @param string $errorMessage
+     * @param bool   $isOpc
+     *
+     * @return string
+     */
+    public function getErrorUrl($errorMessage = '', $isOpc = false)
+    {
+        return $this->url($this->getIdentifier(), 'error', ['error' => $errorMessage]);
+    }
 
     /**
      * Get url for confirmation link
