@@ -32,7 +32,7 @@ class Bankwire_PaymentController extends Payment
                 'newState'      => \CoreShop\Model\Order\State::STATE_NEW,
                 'newStatus'     => \CoreShop\Model\Order\State::STATUS_PENDING,
                 'additional'    => [
-                    'sendOrderConfirmationMail' => 'yes',
+                    'sendOrderConfirmationMail' => TRUE,
                 ]
 
             ];
