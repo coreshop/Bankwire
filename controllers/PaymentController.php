@@ -25,16 +25,11 @@ class Bankwire_PaymentController extends Payment
     public function paymentAction()
     {
         try {
-            $this->session->order = $this->createOrder($this->view->language, 0);
+            $this->session->order = $this->createOrder($this->view->language);
 
             $params = [
-
                 'newState'      => \CoreShop\Model\Order\State::STATE_NEW,
                 'newStatus'     => \CoreShop\Model\Order\State::STATUS_PENDING,
-                'additional'    => [
-                    'sendOrderConfirmationMail' => TRUE,
-                ]
-
             ];
 
             try {
